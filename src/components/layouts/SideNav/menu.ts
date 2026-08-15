@@ -42,21 +42,7 @@ export const menuItemsData: MenuItemType[] = [
     key: 'Dashboards',
     label: 'Dashboards',
     icon: LuMonitorDot,
-    children: [
-      { key: 'Analytics', label: 'Analytics', href: '/analytics' },
-      { key: 'Ecommerce', label: 'Ecommerce', href: '/index' },
-      { key: 'Email', label: 'Email', href: '/email' },
-      { key: 'HR', label: 'HR', href: '/hr' },
-    ],
-  },
-  {
-    key: 'Landing Page',
-    label: 'Landing Page',
-    icon: LuPictureInPicture2,
-    children: [
-      { key: 'One Page', label: 'One Page', href: '/onepage-landing', target: '_blank' },
-      { key: 'Product', label: 'Product', href: '/product-landing', target: '_blank' },
-    ],
+    href: '/hr',
   },
   {
     key: 'Apps',
@@ -86,22 +72,6 @@ export const menuItemsData: MenuItemType[] = [
     label: 'Notes',
     icon: LuClipboardList,
     href: '/notes',
-  },
-  {
-    key: 'Ecommerce',
-    label: 'Ecommerce',
-    icon: LuShoppingBag,
-    children: [
-      { key: 'Products', label: 'Products', href: '/product-list' },
-      { key: 'Products Grid', label: 'Products Grid', href: '/product-grid' },
-      { key: 'Product Details', label: 'Product Details', href: '/product-overview' },
-      { key: 'Shopping Cart', label: 'Shopping Cart', href: '/cart' },
-      { key: 'Checkout', label: 'Checkout', href: '/checkout' },
-      { key: 'Add Products', label: 'Add Products', href: '/product-create' },
-      { key: 'Orders', label: 'Orders', href: '/orders' },
-      { key: 'Order Details', label: 'Order Details', href: '/order-overview' },
-      { key: 'Sellers', label: 'Sellers', href: '/sellers' },
-    ],
   },
   {
     key: 'HR Management',
@@ -197,20 +167,6 @@ export const menuItemsData: MenuItemType[] = [
     ],
   },
   {
-    key: 'Basic Auth',
-    label: 'Basic Auth',
-    icon: LuLock,
-    children: [
-      { key: 'Login', label: 'Login', href: '/basic-login' },
-      { key: 'Register', label: 'Register', href: '/basic-register' },
-      { key: 'Verify Email', label: 'Verify Email', href: '/basic-verify-email' },
-      { key: 'Two Steps', label: 'Two Steps', href: '/basic-two-steps' },
-      { key: 'Logout', label: 'Logout', href: '/basic-logout' },
-      { key: 'Reset Password', label: 'Reset Password', href: '/basic-reset-password' },
-      { key: 'Create Password', label: 'Create Password', href: '/basic-create-password' },
-    ],
-  },
-  {
     key: 'Cover Auth',
     label: 'Cover Auth',
     icon: LuShieldCheck,
@@ -222,20 +178,6 @@ export const menuItemsData: MenuItemType[] = [
       { key: 'Logout', label: 'Logout', href: '/cover-logout' },
       { key: 'Reset Password', label: 'Reset Password', href: '/cover-reset-password' },
       { key: 'Create Password', label: 'Create Password', href: '/cover-create-password' },
-    ],
-  },
-  {
-    key: 'Boxed Auth',
-    label: 'Boxed Auth',
-    icon: LuPackage,
-    children: [
-      { key: 'Login', label: 'Login', href: '/boxed-login' },
-      { key: 'Register', label: 'Register', href: '/boxed-register' },
-      { key: 'Verify Email', label: 'Verify Email', href: '/boxed-verify-email' },
-      { key: 'Two Steps', label: 'Two Steps', href: '/boxed-two-steps' },
-      { key: 'Logout', label: 'Logout', href: '/boxed-logout' },
-      { key: 'Reset Password', label: 'Reset Password', href: '/boxed-reset-password' },
-      { key: 'Create Password', label: 'Create Password', href: '/boxed-create-password' },
     ],
   },
   {
