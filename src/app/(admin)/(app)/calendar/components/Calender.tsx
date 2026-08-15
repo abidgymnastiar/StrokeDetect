@@ -7,7 +7,7 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { DateClickArg, Draggable } from '@fullcalendar/interaction';
 
 import EventModal from './EventModal';
-import { getDefaultEvents } from './calendarEvents';
+// import { getDefaultEvents } from './calendarEvents';
 import ExternalEvents from './Events';
 
 const CalendarApp: React.FC = () => {

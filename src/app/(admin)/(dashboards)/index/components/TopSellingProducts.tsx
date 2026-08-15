@@ -6,7 +6,7 @@ import product05 from '@/assets/images/product/img-05.png';
 import product06 from '@/assets/images/product/img-06.png';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { LuEllipsis, LuEllipsisVertical, LuShoppingCart, LuStar, LuStarHalf } from 'react-icons/lu';
+import {LuEllipsisVertical, LuShoppingCart, LuStar, LuStarHalf } from 'react-icons/lu';
 
 type Product = {
   id: number;

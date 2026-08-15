@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import React from 'react';
-import { LuRocket, LuShoppingCart } from 'react-icons/lu';
 
 const Hero = () => {
   return (
