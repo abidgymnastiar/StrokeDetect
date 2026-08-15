@@ -50,30 +50,6 @@ export const menuItemsData: MenuItemType[] = [
     isTitle: true,
   },
   {
-    key: 'Chat',
-    label: 'Chat',
-    icon: LuMessagesSquare,
-    href: '/chat',
-  },
-  {
-    key: 'Calendar',
-    label: 'Calendar',
-    icon: LuCalendar1,
-    href: '/calendar',
-  },
-  {
-    key: 'Email',
-    label: 'Email',
-    icon: LuMail,
-    href: '/mailbox',
-  },
-  {
-    key: 'Notes',
-    label: 'Notes',
-    icon: LuClipboardList,
-    href: '/notes',
-  },
-  {
     key: 'HR Management',
     label: 'HR Management',
     icon: LuCircuitBoard,
