@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Feature from './components/Feature';
 import Works from './components/Works';
 import About from './components/About';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
@@ -15,11 +15,11 @@ const Page = () => {
     <>
       <Navbar />
       <Hero />
-      <Feature />
-      <Works />
+      {/* <Feature /> */}
+      {/* <Works /> */}
       <About />
       <Pricing />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </>
   );

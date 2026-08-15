@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
               <MobileMenu />
 
-              <Link href="#" className="flex justify-end">
+              <Link href="/cover-login" className="flex justify-end">
                 <button type="button" className="btn bg-primary text-white">
                   Sign In
                   <LuLogIn className="size-4" />

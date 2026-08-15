@@ -91,7 +91,7 @@ const socialLinks: SocialLink[] = [
 const Footer = () => {
   return (
     <footer className="relative pt-20 pb-12 bg-default-800 dark:bg-default-900">
-      <div className="container">
+      {/* <div className="container">
         <div className="relative z-10 grid lg:grid-cols-12 md:grid-cols-2 gap-5">
           {footerSections.map((section, idx) => (
             <div key={idx} className="lg:col-span-3">
@@ -199,7 +199,7 @@ const Footer = () => {
             </Link>
           </p>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };
