@@ -22,7 +22,7 @@ export default auth((req) => {
   }
 
   if (isUserRoute && role !== 'USER') {
-    return NextResponse.redirect(new URL('/admin', req.nextUrl.origin));
+    return NextResponse.redirect(new URL('/admin/dashboards', req.nextUrl.origin));
   }
 
   return NextResponse.next();

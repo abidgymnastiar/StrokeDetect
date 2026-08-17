@@ -39,7 +39,7 @@ const Page = () => {
     const session = await sessionRes.json();
     const role = session?.user?.role;
 
-    router.push(role === 'ADMIN' ? '/admin' : '/user');
+    router.push(role === 'ADMIN' ? '/admin/dashboards' : '/user');
     router.refresh();
   };
 
