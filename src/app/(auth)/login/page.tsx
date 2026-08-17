@@ -1,15 +1,48 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 import logoDark from '@/assets/images/logo-dark.png';
 import logoLight from '@/assets/images/logo-light.png';
 import authBg from '@/assets/images/auth-bg.jpg';
 import authBgDark from '@/assets/images/auth-bg-dark.jpg';
 import IconifyIcon from '@/components/client-wrapper/IconifyIcon';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Login' };
 const Page = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+
+    const result = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
+    });
+
+    setIsLoading(false);
+
+    if (result?.error) {
+      setError('Email atau password salah');
+      return;
+    }
+
+    const sessionRes = await fetch('/api/auth/session');
+    const session = await sessionRes.json();
+    const role = session?.user?.role;
+
+    router.push(role === 'ADMIN' ? '/admin' : '/user');
+    router.refresh();
+  };
+
   return (
     <div className="relative h-screen w-full flex justify-center items-center">
       <div className="absolute inset-0">
@@ -38,7 +71,13 @@ const Page = () => {
               <p className="text-base text-default-500">Sign in to continue to Tailwick.</p>
             </div>
 
-            <form action="/index" className="text-left w-full mt-10">
+            <form onSubmit={handleSubmit} className="text-left w-full mt-10">
+              {error && (
+                <div className="mb-4 rounded-md bg-red-100 px-4 py-2 text-sm text-red-700">
+                  {error}
+                </div>
+              )}
+
               <div className="mb-4">
                 <label htmlFor="email" className="block font-medium text-default-900 text-sm mb-2">
                   Username/ Email ID
@@ -46,8 +85,12 @@ const Page = () => {
                 <input
                   type="text"
                   id="email"
+                  name="email"
                   className="form-input"
                   placeholder="Enter Username or email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
@@ -67,8 +110,12 @@ const Page = () => {
                 <input
                   type="password"
                   id="Password"
+                  name="password"
                   className="form-input"
                   placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
 
@@ -80,8 +127,12 @@ const Page = () => {
               </div>
 
               <div className="mt-10 text-center">
-                <button type="submit" className="btn bg-primary text-white w-full">
-                  Sign In
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn bg-primary text-white w-full disabled:opacity-60"
+                >
+                  {isLoading ? 'Signing in...' : 'Sign In'}
                 </button>
               </div>
 

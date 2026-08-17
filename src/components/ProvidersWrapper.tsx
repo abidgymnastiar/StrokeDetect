@@ -1,5 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
+import { SessionProvider } from 'next-auth/react';
 import React, { useEffect } from 'react';
 
 import LayoutProvider from '@/context/useLayoutContext';
@@ -33,9 +34,9 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <>
+    <SessionProvider>
       <LayoutProvider>{children}</LayoutProvider>
-    </>
+    </SessionProvider>
   );
 };
 
