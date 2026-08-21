@@ -108,9 +108,9 @@ export const menuItemsData: MenuItemType[] = [
     label: 'Invoice',
     icon: LuFileText,
     children: [
-      { key: 'Overview', label: 'Overview', href: '/overview' },
-      { key: 'List Invoice', label: 'List Invoice', href: '/list' },
-      { key: 'Add Invoice', label: 'Add Invoice', href: '/add-new' },
+      { key: 'Overview', label: 'Overview', href: '/admin/overview' },
+      { key: 'List Invoice', label: 'List Invoice', href: '/admin/list' },
+      { key: 'Add Invoice', label: 'Add Invoice', href: '/admin/add-new' },
     ],
   },
   {

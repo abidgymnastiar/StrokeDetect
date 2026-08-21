@@ -14,7 +14,7 @@ const Page = () => {
   return (
     <>
       <Navbar />
-      <Hero />
+      {/* <Hero /> */}
       {/* <Feature /> */}
       {/* <Works /> */}
       <About />
