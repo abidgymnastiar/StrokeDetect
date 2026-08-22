@@ -11,7 +11,7 @@ import spain from '@/assets/images/flags/spain.jpg';
 import us from '@/assets/images/flags/us.jpg';
 import Link from 'next/link';
 import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter, LuYoutube } from 'react-icons/lu';
-import { currentYear, developedBy } from '../../../../helpers/constants';
+import { currentYear, developedBy } from '../../../helpers/constants';
 
 type FooterLink = {
   label: string;

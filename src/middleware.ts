@@ -18,7 +18,7 @@ export default auth((req) => {
   }
 
   if (isAdminRoute && role !== 'ADMIN') {
-    return NextResponse.redirect(new URL('/user/onepage-landing', req.nextUrl.origin));
+    return NextResponse.redirect(new URL('/user', req.nextUrl.origin));
   }
 
   if (isUserRoute && role !== 'USER') {
