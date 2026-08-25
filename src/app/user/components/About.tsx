@@ -42,7 +42,7 @@ const About = () => {
 
             <div className="lg:col-span-6">
               <Image src={widgets4} alt="" className="shadow-lg lg:ms-auto rounded-xl" />
-              <Image src={widgets5} alt="" className="shadow-lg -mt-24 rounded-xl ms-auto mr-24" />
+              {/* <Image src={widgets5} alt="" className="shadow-lg -mt-24 rounded-xl ms-auto mr-24" /> */}
             </div>
           </div>
 
