@@ -1,5 +1,5 @@
 import React from 'react';
-import widgets4 from '@/assets/images/landing/widgets-4.jpg';
+import widgets4 from '@/assets/images/landing-page/about-1.png';
 import widgets5 from '@/assets/images/landing/widgets-5.jpg';
 import widgets6 from '@/assets/images/landing/widgets-6.jpg';
 import widgets7 from '@/assets/images/landing/widgets-7.jpg';
@@ -7,7 +7,6 @@ import widgets8 from '@/assets/images/landing/widgets-8.jpg';
 import widgets9 from '@/assets/images/landing/widgets-9.jpg';
 
 import Image from 'next/image';
-import { LuMoveRight } from 'react-icons/lu';
 
 const About = () => {
   return (
@@ -28,7 +27,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-6 items-center">
+          <div className="grid lg:grid-cols-12 gap-7 items-center">
             <div className="lg:col-span-5">
               <h1 className="mb-3 leading-normal capitalize text-4xl font-semibold text-default-800">
                 Kenali Risiko Stroke Lebih Awal dengan Mudah
@@ -42,7 +41,7 @@ const About = () => {
 
             <div className="lg:col-span-6">
               <Image src={widgets4} alt="" className="shadow-lg lg:ms-auto rounded-xl" />
-              {/* <Image src={widgets5} alt="" className="shadow-lg -mt-24 rounded-xl ms-auto mr-24" /> */}
+              <Image src={widgets5} alt="" className="shadow-lg -mt-24 rounded-xl ms-auto mr-24" />
             </div>
           </div>
 
