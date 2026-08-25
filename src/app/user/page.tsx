@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import Pricing from './components/Pricing';
+import Prediksi from './components/prediksi';
 import Footer from './components/Footer';
 import Working from './components/working';
 
@@ -15,7 +15,7 @@ const Page = () => {
       <Home />
       <About />
       <Working />
-      <Pricing />
+      <Prediksi />
       <Footer />
     </>
   );

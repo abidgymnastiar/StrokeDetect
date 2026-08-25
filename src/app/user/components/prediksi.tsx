@@ -110,7 +110,7 @@ const pricingPlans: PricingPlan[] = [
     ],
   },
 ];
-const Pricing = () => {
+const Prediksi = () => {
   return (
     <section id="prediksi" className="relative lg:pb-24 md:pb-18 pb-12">
       <div className="container">
@@ -185,4 +185,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Prediksi;

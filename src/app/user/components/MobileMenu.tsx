@@ -51,7 +51,7 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href="#Tentang-Stroke"
+                href="#tentang-stroke"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
                 Tentang Stroke
@@ -60,7 +60,7 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href="#Cara-Kerja"
+                href="#cara-kerja"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
                 Cara Kerja
@@ -69,7 +69,7 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href="#Prediksi"
+                href="#prediksi"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
                 Prediksi
@@ -78,7 +78,7 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href="#Riwayat"
+                href="#riwayat"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
                 Riwayat

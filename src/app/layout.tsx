@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, Tourney } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import { DEFAULT_PAGE_TITLE } from '../helpers/constants';
-import favicon from "@/assets/images/favicon.ico"
+import favicon from '@/assets/images/favicon.ico';
 
 import 'flatpickr/dist/flatpickr.css';
 import 'swiper/swiper-bundle.css';
