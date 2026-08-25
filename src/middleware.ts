@@ -11,17 +11,19 @@ export default auth((req) => {
   const isAdminRoute = pathname.startsWith('/admin');
   const isUserRoute = pathname.startsWith('/user');
 
-  if (!req.auth) {
-    const loginUrl = new URL('/login', req.nextUrl.origin);
-    loginUrl.searchParams.set('callbackUrl', pathname);
-    return NextResponse.redirect(loginUrl);
+  if (isAdminRoute) {
+    if (!req.auth) {
+      const loginUrl = new URL('/login', req.nextUrl.origin);
+      loginUrl.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    if (role !== 'ADMIN') {
+      return NextResponse.redirect(new URL('/user', req.nextUrl.origin));
+    }
   }
 
-  if (isAdminRoute && role !== 'ADMIN') {
-    return NextResponse.redirect(new URL('/user', req.nextUrl.origin));
-  }
-
-  if (isUserRoute && role !== 'USER') {
+  if (isUserRoute && req.auth && role !== 'USER') {
     return NextResponse.redirect(new URL('/admin/dashboards', req.nextUrl.origin));
   }
 

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Prediksi from './components/prediksi';
+import Riwayat from './components/riwayat';
 import Footer from './components/Footer';
 import Working from './components/working';
 
@@ -16,6 +17,7 @@ const Page = () => {
       <About />
       <Working />
       <Prediksi />
+      <Riwayat />
       <Footer />
     </>
   );

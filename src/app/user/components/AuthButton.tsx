@@ -25,7 +25,7 @@ const AuthButton = () => {
   }
 
   return (
-    <Link href="/cover-login" className="flex justify-end">
+    <Link href="/login" className="flex justify-end">
       <button type="button" className="btn bg-primary text-white">
         Sign In
         <LuLogIn className="size-4" />
