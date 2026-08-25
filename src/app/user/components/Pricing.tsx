@@ -112,7 +112,7 @@ const pricingPlans: PricingPlan[] = [
 ];
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative lg:pb-24 md:pb-18 pb-12">
+    <section id="prediksi" className="relative lg:pb-24 md:pb-18 pb-12">
       <div className="container">
         <div className="flex flex-col gap-y-16">
           <div className="text-center lg:w-3xl mx-auto">

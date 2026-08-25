@@ -41,37 +41,37 @@ const Navbar = () => {
 
                 <li>
                   <Link
-                    href="#features"
+                    href="#tentang-stroke"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Our Features
+                    Tentang Stroke
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#about"
+                    href="#cara-kerja"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    About Us
+                    Cara Kerja
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#pricing"
+                    href="#prediksi"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Pricing
+                    Prediksi
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#contact"
+                    href="#riwayat"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Contact
+                    Riwayat
                   </Link>
                 </li>
               </ul>

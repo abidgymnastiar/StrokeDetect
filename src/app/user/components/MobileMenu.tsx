@@ -51,37 +51,37 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href="#features"
+                href="#Tentang-Stroke"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Our Features
+                Tentang Stroke
               </Link>
             </li>
 
             <li>
               <Link
-                href="#about"
+                href="#Cara-Kerja"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                About Us
+                Cara Kerja
               </Link>
             </li>
 
             <li>
               <Link
-                href="#pricing"
+                href="#Prediksi"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Pricing
+                Prediksi
               </Link>
             </li>
 
             <li>
               <Link
-                href="#contact"
+                href="#Riwayat"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Contact
+                Riwayat
               </Link>
             </li>
           </ul>
