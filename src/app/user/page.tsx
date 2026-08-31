@@ -3,10 +3,11 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import Prediksi from './components/prediksi';
-import Riwayat from './components/riwayat';
 import Footer from './components/Footer';
 import Working from './components/working';
+import AboutDetect from './components/AboutDetect';
+import AboutHealth from './components/AboutHealth';
+import AboutDetection from './components/AboutDetection';
 
 export const metadata: Metadata = { title: 'Home' };
 const Page = () => {
@@ -16,8 +17,9 @@ const Page = () => {
       <Home />
       <About />
       <Working />
-      <Prediksi />
-      <Riwayat />
+      <AboutDetect />
+      <AboutHealth />
+      <AboutDetection />
       <Footer />
     </>
   );
