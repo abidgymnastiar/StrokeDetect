@@ -1,5 +1,5 @@
-import darkLogo from '@/assets/images/logo-dark.png';
-import logoLight from '@/assets/images/logo-light.png';
+import darkLogo from '@/assets/images/logo/logo.png';
+import logoLight from '@/assets/images/logo/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import MobileMenu from './MobileMenu';
@@ -10,8 +10,8 @@ const Navbar = () => {
     <header>
       <nav className="fixed inset-x-0 top-0 z-50 bg-card py-6  shadow flex justify-between items-center">
         <div className="container">
-          <div className="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
-            <div className="lg:col-span-2 md:col-span-2">
+          <div className="flex items-center justify-between gap-3">
+            <div className="shrink-0">
               <Link href="/index">
                 <Image
                   src={darkLogo}
@@ -28,8 +28,8 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div className="lg:col-span-8 md:col-span-6 md:block hidden">
-              <ul className="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
+            <div className="md:block hidden">
+              <ul className="flex items-center justify-center lg:gap-8 md:gap-4 font-medium text-sm">
                 <li>
                   <Link
                     href="#home"
@@ -77,7 +77,7 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <div className="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
+            <div className="shrink-0 flex items-center gap-2">
               <MobileMenu />
 
               <AuthButton />

@@ -7,7 +7,7 @@ const AboutHealth = () => {
   return (
     <section className="relative lg:pb-24 md:pb-18 pb-12">
       <div className="container">
-        <div className="rounded-2xl bg-primary/5 overflow-hidden">
+        <div className="rounded-2xl overflow-hidden">
           <div className="grid lg:grid-cols-12 gap-3 items-center px-6 py-10 lg:px-12">
             <div className="lg:col-span-6 lg:order-1 order-2">
               <span className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
