@@ -16,13 +16,13 @@ const Navbar = () => {
                 <Image
                   src={darkLogo}
                   alt="logo dark"
-                  className="h-6 block dark:hidden"
+                  className="h-auto block dark:hidden"
                   width={111}
                 />
                 <Image
                   src={logoLight}
                   alt="logo light"
-                  className="h-6 hidden dark:block"
+                  className="h-auto hidden dark:block"
                   width={111}
                 />
               </Link>
