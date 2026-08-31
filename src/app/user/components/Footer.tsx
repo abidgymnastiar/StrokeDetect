@@ -1,17 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
-import arebian from '@/assets/images/flags/arebian.svg';
-import french from '@/assets/images/flags/french.jpg';
-import germany from '@/assets/images/flags/germany.jpg';
-import italy from '@/assets/images/flags/italy.jpg';
-import japanese from '@/assets/images/flags/japanese.svg';
-import russia from '@/assets/images/flags/russia.jpg';
-import spain from '@/assets/images/flags/spain.jpg';
-import us from '@/assets/images/flags/us.jpg';
-import Link from 'next/link';
 import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter, LuYoutube } from 'react-icons/lu';
-import { currentYear, developedBy } from '../../../helpers/constants';
 
 type FooterLink = {
   label: string;
@@ -67,17 +57,6 @@ const footerSections: FooterSection[] = [
       { label: 'Help Center', href: '#' },
     ],
   },
-];
-
-const languages: Language[] = [
-  { name: 'English', flag: us },
-  { name: 'Spanish', flag: spain },
-  { name: 'German', flag: germany },
-  { name: 'French', flag: french },
-  { name: 'Japanese', flag: japanese },
-  { name: 'Italian', flag: italy },
-  { name: 'Russian', flag: russia },
-  { name: 'Arabic', flag: arebian },
 ];
 
 const socialLinks: SocialLink[] = [
