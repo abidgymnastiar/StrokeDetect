@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <aside id="app-menu" className="app-menu">
       <Link
-        href="/index"
+        href="/admin/dashboards"
         className="logo-box sticky top-0 flex min-h-topbar-height items-center justify-start px-6 backdrop-blur-xs"
       >
         <div className="logo-light">

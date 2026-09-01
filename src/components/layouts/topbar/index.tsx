@@ -1,11 +1,3 @@
-import ArabianFlag from '@/assets/images/flags/arebian.svg';
-import FrenchFlag from '@/assets/images/flags/french.jpg';
-import GermanyFlag from '@/assets/images/flags/germany.jpg';
-import ItalyFlag from '@/assets/images/flags/italy.jpg';
-import JapaneseFlag from '@/assets/images/flags/japanese.svg';
-import RussiaFlag from '@/assets/images/flags/russia.jpg';
-import SpainFlag from '@/assets/images/flags/spain.jpg';
-import UsFlag from '@/assets/images/flags/us.jpg';
 import avatar1 from '@/assets/images/user/avatar-1.png';
 import avatar3 from '@/assets/images/user/avatar-3.png';
 import avatar5 from '@/assets/images/user/avatar-5.png';
@@ -14,18 +6,14 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { TbSearch } from 'react-icons/tb';
-import SimpleBar from 'simplebar-react';
 import SidenavToggle from './SidenavToggle';
 import ThemeModeToggle from './ThemeModeToggle';
 import {
-  LuBellRing,
-  LuClock,
   LuGem,
   LuHeart,
   LuLogOut,
   LuMail,
   LuMessagesSquare,
-  LuMoveRight,
   LuSettings,
   LuShoppingBag,
 } from 'react-icons/lu';
@@ -58,17 +46,6 @@ type ProfileMenuItem = {
   badge?: string;
   divider?: boolean;
 };
-
-const languages: Language[] = [
-  { src: UsFlag, label: 'English' },
-  { src: SpainFlag, label: 'Spanish' },
-  { src: GermanyFlag, label: 'German' },
-  { src: FrenchFlag, label: 'French' },
-  { src: JapaneseFlag, label: 'Japanese' },
-  { src: ItalyFlag, label: 'Italian' },
-  { src: RussiaFlag, label: 'Russian' },
-  { src: ArabianFlag, label: 'Arabic' },
-];
 
 const tabs: Tab[] = [
   { id: 'tabsViewall', title: 'View all', active: true },

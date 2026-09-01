@@ -1,14 +1,30 @@
-import PageBreadcrumb from '@/components/PageBreadcrumb';
-import React from 'react';
-import UserListTabel from './components/UserListTabel';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'List View' };
-const Page = () => {
+import PageBreadcrumb from '@/components/PageBreadcrumb';
+import { prisma } from '@/lib/prisma';
+import { Role } from '@/generated/prisma/enums';
+import UsersTable from './components/UsersTable';
+import type { UserRow } from './types';
+
+export const metadata: Metadata = { title: 'Users' };
+export const dynamic = 'force-dynamic';
+
+const Page = async () => {
+  const users = await prisma.user.findMany({
+    where: { role: Role.USER },
+    orderBy: { createdAt: 'desc' },
+    select: { id: true, email: true, name: true, createdAt: true },
+  });
+
+  const rows: UserRow[] = users.map((u) => ({
+    ...u,
+    createdAt: u.createdAt.toISOString(),
+  }));
+
   return (
     <main>
-      <PageBreadcrumb subtitle="Users" title="List view" />
-      <UserListTabel />
+      <PageBreadcrumb subtitle="Admin" title="Users" />
+      <UsersTable users={rows} />
     </main>
   );
 };
