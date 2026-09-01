@@ -1,3 +1,6 @@
+'use client';
+
+import { signOut, useSession } from 'next-auth/react';
 import avatar1 from '@/assets/images/user/avatar-1.png';
 import avatar3 from '@/assets/images/user/avatar-3.png';
 import avatar5 from '@/assets/images/user/avatar-5.png';
@@ -45,6 +48,7 @@ type ProfileMenuItem = {
   href?: string;
   badge?: string;
   divider?: boolean;
+  action?: 'signOut';
 };
 
 const tabs: Tab[] = [
@@ -160,43 +164,25 @@ const notifications: Record<string, Notification[]> = {
 };
 
 const profileMenu: ProfileMenuItem[] = [
-  {
-    icon: <LuMail className="size-4" />,
-    label: 'Inbox',
-    href: '/mailbox',
-    badge: '15',
-  },
-  { icon: <LuMessagesSquare className="size-4" />, label: 'Chat', href: '/chat' },
-  { icon: <LuGem className="size-4" />, label: 'Upgrade Pro', href: '/pricing' },
-  { divider: true },
+  // { icon: <LuMessagesSquare className="size-4" />, label: 'Page Home', href: '/' },
+  // { divider: true },
   {
     icon: <LuLogOut className="size-4" />,
     label: 'Sign Out',
-    href: '/basic-logout',
+    action: 'signOut',
   },
 ];
 
 const Topbar = () => {
+  const { data: session } = useSession();
+  const userName = session?.user?.name || 'Admin';
+  const userEmail = session?.user?.email || '';
+
   return (
     <div className="app-header min-h-topbar-height flex items-center sticky top-0 z-30 bg-(--topbar-background) border-b border-default-200">
       <div className="w-full flex items-center justify-between px-6">
         <div className="flex items-center gap-5">
           <SidenavToggle />
-
-          <div className="lg:flex hidden items-center relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <TbSearch className="text-base" />
-            </div>
-            <input
-              type="search"
-              id="topbar-search"
-              className="form-input px-12 text-sm rounded border-transparent focus:border-transparent w-60"
-              placeholder="Search something..."
-            />
-            <button type="button" className="absolute inset-y-0 end-0 flex items-center pe-4">
-              <span className="ms-auto font-medium">⌘ K</span>
-            </button>
-          </div>
         </div>
 
         <div className="flex items-center gap-3">
@@ -225,15 +211,15 @@ const Topbar = () => {
             </button>
             <div className="hs-dropdown-menu min-w-48">
               <div className="p-2">
-                <h6 className="mb-2 text-default-500">Welcome to Tailwick</h6>
+                <h6 className="mb-2 text-default-500">Welcome {userName}</h6>
                 <Link href="#!" className="flex gap-3">
                   <div className="relative inline-block">
                     <Image src={avatar1} alt="user" className="size-12 rounded" />
                     <span className="-top-1 -end-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full"></span>
                   </div>
                   <div>
-                    <h6 className="mb-1 text-sm font-semibold text-default-800">Paula Keenan</h6>
-                    <p className="text-default-500">CEO & Founder</p>
+                    <h6 className="mb-1 text-sm font-semibold text-default-800">{userName}</h6>
+                    <p className="text-default-500">{userEmail}</p>
                   </div>
                 </Link>
               </div>
@@ -241,15 +227,32 @@ const Topbar = () => {
               <div className="border-t border-default-200 -mx-2 my-2"></div>
 
               <div className="flex flex-col gap-y-1">
-                {profileMenu.map((item, i) =>
-                  item.divider ? (
-                    <div key={i} className="border-t border-default-200 -mx-2 my-1"></div>
-                  ) : (
-                    <Link
-                      key={i}
-                      href={item.href || '#!'}
-                      className="flex items-center gap-x-3.5 py-1.5 px-3 text-default-600 hover:bg-default-150 rounded font-medium"
-                    >
+                {profileMenu.map((item, i) => {
+                  if (item.divider) {
+                    return (
+                      <div key={i} className="border-t border-default-200 -mx-2 my-1"></div>
+                    );
+                  }
+
+                  const className =
+                    'flex items-center gap-x-3.5 py-1.5 px-3 text-default-600 hover:bg-default-150 rounded font-medium';
+
+                  if (item.action === 'signOut') {
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => signOut({ callbackUrl: '/login' })}
+                        className={`${className} w-full text-start`}
+                      >
+                        {item.icon}
+                        {item.label}
+                      </button>
+                    );
+                  }
+
+                  return (
+                    <Link key={i} href={item.href || '#!'} className={className}>
                       {item.icon}
                       {item.label}
                       {item.badge && (
@@ -258,8 +261,8 @@ const Topbar = () => {
                         </span>
                       )}
                     </Link>
-                  )
-                )}
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import AddNew from './components/AddNew';
 import { Metadata } from 'next';
 
-export const metdata: Metadata = { title: 'Add New' };
+export const metadata: Metadata = { title: 'Add New' };
 const Page = () => {
   return (
     <main>
