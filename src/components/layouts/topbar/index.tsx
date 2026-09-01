@@ -8,15 +8,11 @@ import avatar7 from '@/assets/images/user/avatar-7.png';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { TbSearch } from 'react-icons/tb';
 import SidenavToggle from './SidenavToggle';
 import ThemeModeToggle from './ThemeModeToggle';
 import {
-  LuGem,
   LuHeart,
   LuLogOut,
-  LuMail,
-  LuMessagesSquare,
   LuSettings,
   LuShoppingBag,
 } from 'react-icons/lu';
