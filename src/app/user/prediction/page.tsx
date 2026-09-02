@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import Prediction from '../components/prediction/Prediction';
+import Prediction from './components/Prediction';
 
 export const metadata: Metadata = { title: 'Prediksi' };
 

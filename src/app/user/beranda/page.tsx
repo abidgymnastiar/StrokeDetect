@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-import About from '../components/home/About';
-import AboutDetect from '../components/home/AboutDetect';
-import AboutDetection from '../components/home/AboutDetection';
-import AboutHealth from '../components/home/AboutHealth';
-import Home from '../components/home/Home';
-import Working from '../components/home/Working';
+import About from './components/About';
+import AboutDetect from './components/AboutDetect';
+import AboutDetection from './components/AboutDetection';
+import AboutHealth from './components/AboutHealth';
+import Home from './components/Home';
+import Working from './components/Working';
 
 export const metadata: Metadata = { title: 'Beranda' };
 

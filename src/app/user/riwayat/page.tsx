@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import Riwayat from '../components/history/Riwayat';
+import Riwayat from './components/Riwayat';
 
 export const metadata: Metadata = { title: 'Riwayat' };
 

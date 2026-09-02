@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import React from 'react';
-import About from './components/home/About';
-import AboutDetect from './components/home/AboutDetect';
-import AboutDetection from './components/home/AboutDetection';
-import AboutHealth from './components/home/AboutHealth';
-import Home from './components/home/Home';
-import Working from './components/home/Working';
+import About from './beranda/components/About';
+import AboutDetect from './beranda/components/AboutDetect';
+import AboutDetection from './beranda/components/AboutDetection';
+import AboutHealth from './beranda/components/AboutHealth';
+import Home from './beranda/components/Home';
+import Working from './beranda/components/Working';
 
 export const metadata: Metadata = { title: 'Home' };
 const Page = () => {
