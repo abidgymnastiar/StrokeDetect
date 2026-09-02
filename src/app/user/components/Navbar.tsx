@@ -59,7 +59,7 @@ const Navbar = () => {
 
                 <li>
                   <Link
-                    href="#prediksi"
+                    href="/user/prediction"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
                     Prediksi

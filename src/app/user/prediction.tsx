@@ -1,6 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { LuCheckCheck, LuCrown, LuGoal, LuGraduationCap, LuLock, LuLuggage, LuX } from 'react-icons/lu';
+import {
+  LuCheckCheck,
+  LuCrown,
+  LuGoal,
+  LuGraduationCap,
+  LuLock,
+  LuLuggage,
+  LuX,
+} from 'react-icons/lu';
 import { auth } from '@/auth';
 
 type Feature = {
@@ -112,20 +120,20 @@ const pricingPlans: PricingPlan[] = [
     ],
   },
 ];
-const Prediksi = async () => {
+const prediction = async () => {
   const session = await auth();
 
   if (!session) {
     return (
-      <section id="prediksi" className="relative lg:pb-24 md:pb-18 pb-12">
+      <section className="relative lg:pb-24 md:pb-18 pb-12">
         <div className="container">
           <div className="flex flex-col items-center gap-y-4 text-center card py-16 px-6">
             <div className="size-14 rounded-full bg-primary/10 flex items-center justify-center">
               <LuLock className="size-6 text-primary" />
             </div>
-            <h1 className="text-3xl font-semibold text-default-800">Fitur Prediksi Terkunci</h1>
+            <h1 className="text-3xl font-semibold text-default-800">Fitur prediction Terkunci</h1>
             <p className="text-lg text-default-500 max-w-lg">
-              Silakan login terlebih dahulu untuk mengakses fitur prediksi risiko stroke.
+              Silakan login terlebih dahulu untuk mengakses fitur prediction risiko stroke.
             </p>
             <Link href="/login" className="btn bg-primary text-white mt-2">
               Login untuk Melanjutkan
@@ -137,7 +145,7 @@ const Prediksi = async () => {
   }
 
   return (
-    <section id="prediksi" className="relative lg:pb-24 md:pb-18 pb-12">
+    <section id="prediction" className="relative lg:pb-24 md:pb-18 pb-12">
       <div className="container">
         <div className="flex flex-col gap-y-16">
           <div className="text-center lg:w-3xl mx-auto">
@@ -210,4 +218,4 @@ const Prediksi = async () => {
   );
 };
 
-export default Prediksi;
+export default prediction;

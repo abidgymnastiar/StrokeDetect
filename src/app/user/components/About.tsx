@@ -43,7 +43,7 @@ const features: Feature[] = [
 
 const About = () => {
   return (
-    <section id="tentang-stroke" className="relative lg:pb-24 md:pb-18 pb-12 bg-blue-50">
+    <section id="tentang-stroke" className="relative lg:py-24 md:pb-18 pb-12 bg-blue-50">
       <div className="container">
         <div className="flex flex-col gap-y-12">
           <div className="text-center lg:w-2xl mx-auto">

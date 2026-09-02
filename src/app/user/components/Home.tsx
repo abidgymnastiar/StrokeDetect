@@ -6,7 +6,7 @@ import { LuArrowRight } from 'react-icons/lu';
 
 const Home = () => {
   return (
-    <section id="home" className="relative lg:pt-44 lg:pb-16 md:pt-34 md:pb-20 pt-30 pb-16 bg-blue-50">
+    <section id="home" className="relative lg:pt-36 lg:pb-0 md:pt-34 md:pb-20 pt-30 pb-16 bg-blue-50">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6">

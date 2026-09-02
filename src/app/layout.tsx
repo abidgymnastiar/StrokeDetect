@@ -28,7 +28,7 @@ const getTourney = Tourney({
 export const metadata: Metadata = {
   title: {
     default: DEFAULT_PAGE_TITLE,
-    template: '%s | Tailwick - Tailwind CSS 3 Admin Layout & UI Kit Template',
+    template: '%s | StrokeDetect - Sistem Deteksi Dini Stroke',
   },
   icons: {
     icon: favicon.src,
