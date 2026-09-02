@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
-import { LuLogIn, LuLogOut } from 'react-icons/lu';
+import { LuChevronDown, LuLogIn, LuLogOut, LuUserRound } from 'react-icons/lu';
 
 const AuthButton = () => {
   const { data: session, status } = useSession();
@@ -12,15 +12,43 @@ const AuthButton = () => {
   }
 
   if (session) {
+    const name = session.user?.name || 'User';
+    const email = session.user?.email || 'Email tidak tersedia';
+
     return (
-      <button
-        type="button"
-        onClick={() => signOut({ callbackUrl: '/login' })}
-        className="btn bg-primary text-white"
-      >
-        Logout
-        <LuLogOut className="size-4" />
-      </button>
+      <details className="group relative">
+        <summary className="flex cursor-pointer list-none items-center gap-2 rounded-xl px-2 py-1.5 text-sm font-semibold text-default-700 transition-colors hover:bg-primary/5 hover:text-primary [&::-webkit-details-marker]:hidden">
+          <span className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <LuUserRound className="size-5" aria-hidden="true" />
+          </span>
+          <span className="hidden max-w-28 truncate sm:block">{name}</span>
+          <LuChevronDown
+            className="size-4 transition-transform duration-200 group-open:rotate-180"
+            aria-hidden="true"
+          />
+        </summary>
+
+        <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-64 rounded-2xl border border-default-200 bg-card p-2 shadow-lg">
+          <div className="flex items-center gap-3 rounded-xl bg-primary/5 p-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <LuUserRound className="size-5" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold text-default-800">{name}</p>
+              <p className="truncate text-xs text-default-500">{email}</p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => signOut({ callbackUrl: '/login' })}
+            className="mt-2 flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-danger transition-colors hover:bg-danger/10"
+          >
+            <LuLogOut className="size-4" aria-hidden="true" />
+            Logout
+          </button>
+        </div>
+      </details>
     );
   }
 
