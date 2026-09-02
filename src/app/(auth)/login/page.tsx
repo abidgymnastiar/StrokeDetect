@@ -68,7 +68,7 @@ const Page = () => {
 
             <div className="mt-8 text-center">
               <h4 className="mb-2.5 text-xl font-semibold text-primary">Welcome Back !</h4>
-              <p className="text-base text-default-500">Sign in to continue to Tailwick.</p>
+              <p className="text-base text-default-500">Sign in to continue to StrokeDetect.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="text-left w-full mt-10">
@@ -95,12 +95,12 @@ const Page = () => {
               </div>
 
               <div className="mb-4">
-                <Link
+                {/* <Link
                   href="/cover-reset-password"
                   className="text-primary font-medium text-sm mb-2 float-end"
                 >
                   Forgot Password ?
-                </Link>
+                </Link> */}
                 <label
                   htmlFor="Password"
                   className="block font-medium text-default-900 text-sm mb-2"
@@ -136,35 +136,11 @@ const Page = () => {
                 </button>
               </div>
 
-              <div className="my-9 relative text-center before:absolute before:top-2.5 before:left-0 before:border-t before:border-t-default-200 before:w-full before:h-0.5 before:right-0 before:-z-0">
-                <h4 className="relative z-1 py-0.5 px-2 inline-block font-medium text-default-600 bg-card">
-                  Sign In With
-                </h4>
-              </div>
-
-              <div className="flex w-full justify-center items-center gap-2">
-                <Link
-                  href="#"
-                  className="btn border border-default-200 flex-grow hover:bg-default-150 shadow-sm hover:text-default-800"
-                >
-                  <IconifyIcon icon={'logos:google-icon'} />
-                  Use Google
-                </Link>
-
-                <Link
-                  href="#"
-                  className="btn border border-default-200 flex-grow hover:bg-default-150 shadow-sm hover:text-default-800"
-                >
-                  <IconifyIcon icon={'logos:apple'} className="text-mono" />
-                  Use Apple
-                </Link>
-              </div>
-
               <div className="mt-10 text-center">
                 <p className="text-base text-default-500">
                   Don't have an Account ?{' '}
                   <Link
-                    href="/cover-register"
+                    href="/register"
                     className="font-semibold underline hover:text-primary transition duration-200"
                   >
                     SignUp
