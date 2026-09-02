@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="container">
           <div className="flex items-center justify-between gap-3">
             <div className="shrink-0">
-              <Link href="/index">
+              <Link href="/user">
                 <Image
                   src={darkLogo}
                   alt="logo dark"
@@ -29,31 +29,16 @@ const Navbar = () => {
             </div>
 
             <div className="md:block hidden">
-              <ul className="flex items-center justify-center lg:gap-8 md:gap-4 font-medium text-sm">
+              <ul
+                className="flex items-center justify-center lg:gap-8 md:gap-4 font-medium text-sm"
+                aria-label="Navigasi utama"
+              >
                 <li>
                   <Link
-                    href="#home"
+                    href="/user/beranda"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Home
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="#tentang-stroke"
-                    className="text-default-800  hover:text-primary transition duration-300"
-                  >
-                    Tentang Stroke
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="#cara-kerja"
-                    className="text-default-800  hover:text-primary transition duration-300"
-                  >
-                    Cara Kerja
+                    Beranda
                   </Link>
                 </li>
 
@@ -62,16 +47,16 @@ const Navbar = () => {
                     href="/user/prediction"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Prediksi
+                    Prediction
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="#riwayat"
+                    href="/user/riwayat"
                     className="text-default-800  hover:text-primary transition duration-300"
                   >
-                    Riwayat
+                    History
                   </Link>
                 </li>
               </ul>

@@ -9,6 +9,7 @@ const MobileMenu = () => {
     <>
       <button
         className="btn size-9 bg-primary text-white md:hidden"
+        aria-label="Buka menu navigasi"
         aria-haspopup="dialog"
         aria-expanded="false"
         aria-controls="navbarMenu"
@@ -24,7 +25,7 @@ const MobileMenu = () => {
         id="navbarMenu"
       >
         <div className="flex items-center justify-between">
-          <Link href="#">
+          <Link href="/user">
             <Image src={logoDark} alt="logo dark" className="h-6 block dark:hidden" width={111} />
             <Image src={logoLight} alt="logo light" className="h-6 hidden dark:block" width={111} />
           </Link>
@@ -39,49 +40,34 @@ const MobileMenu = () => {
         </div>
 
         <div className="pt-8">
-          <ul className="flex flex-col gap-y-4 lg:gap-8 md:gap-6 font-semibold  text-sm">
+          <ul
+            className="flex flex-col gap-y-4 lg:gap-8 md:gap-6 font-semibold text-sm"
+            aria-label="Navigasi utama"
+          >
             <li>
               <Link
-                href="#home"
+                href="/user/beranda"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Home
+                Beranda
               </Link>
             </li>
 
             <li>
               <Link
-                href="#tentang-stroke"
+                href="/user/prediction"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Tentang Stroke
+                Prediction
               </Link>
             </li>
 
             <li>
               <Link
-                href="#cara-kerja"
+                href="/user/riwayat"
                 className="text-secondary-default-400 hover:text-primary transition duration-300"
               >
-                Cara Kerja
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="#prediksi"
-                className="text-secondary-default-400 hover:text-primary transition duration-300"
-              >
-                Prediksi
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="#riwayat"
-                className="text-secondary-default-400 hover:text-primary transition duration-300"
-              >
-                Riwayat
+                History
               </Link>
             </li>
           </ul>
