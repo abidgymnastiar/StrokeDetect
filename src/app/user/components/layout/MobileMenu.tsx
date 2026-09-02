@@ -1,5 +1,17 @@
+'use client';
+
 import Link from 'next/link';
-import { LuClipboardPlus, LuHistory, LuHouse, LuMenu, LuX } from 'react-icons/lu';
+import { signOut, useSession } from 'next-auth/react';
+import {
+  LuClipboardPlus,
+  LuHistory,
+  LuHouse,
+  LuLogIn,
+  LuLogOut,
+  LuMenu,
+  LuUserRound,
+  LuX,
+} from 'react-icons/lu';
 
 const navigationItems = [
   { href: '/user/beranda', label: 'Beranda', icon: LuHouse },
@@ -8,6 +20,10 @@ const navigationItems = [
 ];
 
 const MobileMenu = () => {
+  const { data: session, status } = useSession();
+  const name = session?.user?.name || 'User';
+  const email = session?.user?.email || 'Email tidak tersedia';
+
   return (
     <>
       <button
@@ -53,6 +69,41 @@ const MobileMenu = () => {
             </li>
           ))}
         </ul>
+
+        <div className="mt-8 border-t border-default-200 pt-5">
+          {status === 'loading' ? (
+            <div className="h-16 animate-pulse rounded-xl bg-default-100" />
+          ) : session ? (
+            <>
+              <div className="flex items-center gap-3 rounded-xl bg-primary/5 p-3">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <LuUserRound className="size-5" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-default-800">{name}</p>
+                  <p className="truncate text-xs text-default-500">{email}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => signOut({ callbackUrl: '/login' })}
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold text-danger transition-colors hover:bg-danger/10"
+              >
+                <LuLogOut className="size-4" aria-hidden="true" />
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              data-hs-overlay="#navbarMenu"
+              className="flex items-center justify-center gap-2 rounded-xl bg-primary px-3 py-3 text-sm font-semibold text-white"
+            >
+              <LuLogIn className="size-4" aria-hidden="true" />
+              Sign In
+            </Link>
+          )}
+        </div>
       </div>
     </>
   );

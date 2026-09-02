@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-default-200 bg-card/95 py-3 shadow-sm backdrop-blur">
+      <nav className="fixed inset-x-0 top-0 z-[60] border-b border-default-200 bg-card/95 py-3 shadow-sm backdrop-blur">
         <div className="container">
           <div className="relative flex items-center justify-between gap-4">
             <Link href="/user" className="shrink-0" aria-label="StrokeDetect Beranda">
@@ -66,7 +66,9 @@ const Navbar = () => {
 
             <div className="flex items-center gap-2">
               <MobileMenu />
-              <AuthButton />
+              <div className="hidden md:block">
+                <AuthButton />
+              </div>
             </div>
           </div>
         </div>
